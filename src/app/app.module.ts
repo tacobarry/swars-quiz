@@ -8,7 +8,6 @@ import { SharedModule } from './shared/shared.module';
 import { PeopleService } from './people/people.service';
 import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
-import { CardComponent } from './card/card.component';
 import { HelpComponent } from './help/help.component';
 import { routing } from './app.routing';
 
@@ -16,7 +15,6 @@ import { routing } from './app.routing';
   declarations: [
     AppComponent,
     QuizComponent,
-    CardComponent,
     HelpComponent
   ],
   imports: [

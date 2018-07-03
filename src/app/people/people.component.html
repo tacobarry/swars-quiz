@@ -2,7 +2,12 @@
   people works!
 </p>
 
-<!-- <card *ngFor="let person of people">
-</card> -->
+<div class="container">
+  <div class="row" *ngFor="let item of people">
+    <div class="col-md-2">
+      <app-card [person]="item"></app-card>
+    </div>
+  </div>
+</div>
 
 <app-pagination [peopleResponse]="peopleResponse"></app-pagination>
