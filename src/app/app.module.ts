@@ -9,14 +9,16 @@ import { PeopleModule } from './people/people.module';
 import { PaginationComponent } from './pagination/pagination.component';
 import { CardComponent } from './card/card.component';
 import { PeopleService } from './people/people.service'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizComponent,
     PaginationComponent,
-    CardComponent
+    CardComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
