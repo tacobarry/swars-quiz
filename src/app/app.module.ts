@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { HelpComponent } from './help/help.component';
 import { routing } from './app.routing';
+import { setTheme } from 'ngx-bootstrap/utils';
 
 @NgModule({
   declarations: [
@@ -29,4 +30,8 @@ import { routing } from './app.routing';
   providers: [PeopleService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+    setTheme('bs3')
+  }
+}

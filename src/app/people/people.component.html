@@ -2,12 +2,17 @@
   people works!
 </p>
 
-<div class="container">
-  <div class="row" *ngFor="let item of people">
-    <div class="col-md-2">
-      <app-card [person]="item"></app-card>
-    </div>
+<div class="row">
+  <div class="col-md-2" *ngFor="let item of people1" >
+    <app-card [person]="item"></app-card>
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-md-2" *ngFor="let item of people2" >
+    <app-card [person]="item"></app-card>
   </div>
 </div>
 
-<app-pagination [peopleResponse]="peopleResponse"></app-pagination>
+<app-pagination [peopleResponse]="peopleResponse" 
+  (changePage)="changePage($event)"></app-pagination>

@@ -12,7 +12,7 @@ export class PaginationComponent implements OnInit {
   peopleResponse: PeopleResponse;
 
   @Output()
-  onClick = new EventEmitter();
+  changePage = new EventEmitter();
 
   constructor() { }
 
@@ -20,10 +20,10 @@ export class PaginationComponent implements OnInit {
   }
 
   onPrevious() {
-    this.onClick.emit( this.peopleResponse.previous );
+    this.changePage.emit( this.peopleResponse.previous );
   }
 
-  onNext(url) {
-    this.onClick.emit( url );
+  onNext() {
+    this.changePage.emit( this.peopleResponse.next );
   }
 }

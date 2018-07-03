@@ -14,4 +14,9 @@ export class PeopleService {
     return this.http.get<PeopleResponse>('https://swapi.co/api/people/')
       .toPromise();
   }
+
+  getPeoplePaginated(url): Promise<PeopleResponse> {
+    return this.http.get<PeopleResponse>(url)
+      .toPromise();
+  }
 }
