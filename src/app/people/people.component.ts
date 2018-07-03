@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 
 import { PeopleService } from './people.service';
+import { PeopleResponse } from '../shared/models/people-response';
 
 @Component({
   selector: 'app-people',
@@ -9,25 +10,22 @@ import { PeopleService } from './people.service';
 })
 export class PeopleComponent implements OnInit {
 
-  @Output()
   private people: any[];
 
-  @Output()
-  private next:string;
+  private peopleResponse: PeopleResponse;
 
-  @Output()
-  private previous: string;
-
-  constructor(private peopleService: PeopleService) { }
+  constructor(
+    private peopleService: PeopleService
+  ) { }
 
   ngOnInit() {
     this.peopleService.getPeople()
       .then((res) => {
         this.people = res['results'];
-        this.next = res['next'];
-        this.previous = res['previous'];
 
-        console.log(this.people)
+        this.peopleResponse = res;
+        console.log(this.peopleResponse)
+
       })
       .catch((err) => {
         console.log(err)

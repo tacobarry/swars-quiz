@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { PeopleComponent } from './people.component';
-import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    HttpClientModule
+    SharedModule
   ],
   exports: [
     PeopleComponent
   ],
-  declarations: [PeopleComponent]
+  declarations: [
+    PeopleComponent
+  ]
 })
 export class PeopleModule { }

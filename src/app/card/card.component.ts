@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, Input } from '@angular/core';
+import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'card',
@@ -9,9 +10,6 @@ export class CardComponent implements OnInit {
   
   @Input()
   person: any;
-
-  @Output()
-  answare:string;
 
   constructor() { }
 
