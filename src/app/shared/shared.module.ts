@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { PaginationComponent } from './pagination/pagination.component'
+import { PaginationComponent } from './pagination/pagination.component';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   imports: [
@@ -11,8 +12,9 @@ import { PaginationComponent } from './pagination/pagination.component'
   exports: [
     CommonModule,
     HttpClientModule,
-    PaginationComponent
+    PaginationComponent,
+    TimerComponent
   ],
-  declarations: [PaginationComponent]
+  declarations: [PaginationComponent, TimerComponent]
 })
 export class SharedModule { }
