@@ -1,4 +1,10 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, OnInit, Output, OnDestroy } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { ModalGameOverComponent } from '../modals/modal-game-over/modal-game-over.component';
+
+const fiveSeconds: number = 5000;
+const twoMinutes: number = fiveSeconds * 24;
 
 @Component({
   selector: 'app-timer',
@@ -6,25 +12,25 @@ import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/cor
   styleUrls: ['./timer.component.css']
 })
 export class TimerComponent implements OnInit, OnDestroy {
-  
-  @Output()
-  timeout = new EventEmitter();
 
   timer;
 
-  fiveSeconds: number = 5000;
-  twoMinutes: number = this.fiveSeconds * 24;
+  bsModalRef: BsModalRef;
 
-  constructor() { }
+  constructor(private modalService: BsModalService) {}
 
   ngOnInit() {
     window.clearTimeout(this.timer);
-    this.timer = setTimeout(this.finishedTimer, this.twoMinutes);
+    this.timer = setTimeout(() => { this.showGameOverModal(); }, twoMinutes);
   }
 
-  finishedTimer(event) {
-    console.log('time over!');
-    // this.timeout.emit( event );
+  showGameOverModal() {
+    console.log('Time is over!');
+    const initialState = {
+      title: 'Quiz Finalizado!'
+    };
+    this.bsModalRef = this.modalService.show(ModalGameOverComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Fechar';
   }
 
   ngOnDestroy() {

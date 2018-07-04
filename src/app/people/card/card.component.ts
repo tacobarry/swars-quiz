@@ -35,11 +35,7 @@ export class CardComponent implements OnInit {
       person: this.person
     };
     this.bsModalRef = this.modalService.show(ModalAnswerQuestionComponent, {initialState});
-    this.bsModalRef.content.closeBtnName = 'Close';
-  }
-
-  onAnswared(name) {
-    console.log('NAME:::', name);
+    this.bsModalRef.content.closeBtnName = 'Fechar';
   }
 
   showDetailModal() {
@@ -51,7 +47,7 @@ export class CardComponent implements OnInit {
     };
 
     this.bsModalRef = this.modalService.show(ModalDetailsComponent, {initialState});
-    this.bsModalRef.content.closeBtnName = 'Close';
+    this.bsModalRef.content.closeBtnName = 'Fechar';
     //console.log(person)
   }
 

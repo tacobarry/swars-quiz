@@ -1,0 +1,44 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <span class="modal-body__span--large">{{ player.points }}</span> pontos
+      </div>
+    </div>
+    <br>
+    <p>
+      Preencha o form abaixo para salvar sua pontuação:
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-md-2">
+        Nome:
+      </div>
+      <div class="col-md-5">
+        <input type="text" id="name" placeholder="digite seu nome" />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-2">
+        E-mail:
+      </div>
+      <div class="col-md-5">
+        <input type="text" id="email" placeholder="e-mail" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-dark btn-lg" (click)="onSave($event)">
+          Salvar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+  </div>
