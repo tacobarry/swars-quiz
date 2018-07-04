@@ -19,7 +19,11 @@
         Nome:
       </div>
       <div class="col-md-5">
-        <input type="text" id="name" placeholder="digite seu nome" />
+        <div class="row">
+          <div class="col-12">
+            <input type="text" id="name" name="name" placeholder="digite seu nome" required [(ngModel)]="player.name" #name="ngModel"/>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -27,7 +31,11 @@
         E-mail:
       </div>
       <div class="col-md-5">
-        <input type="text" id="email" placeholder="e-mail" />
+        <div class="row">
+          <div class="col-12">
+            <input type="text" id="email" placeholder="e-mail" required email [(ngModel)]="player.email" #email="ngModel"/>
+          </div>
+        </div>
       </div>
     </div>
     <br>

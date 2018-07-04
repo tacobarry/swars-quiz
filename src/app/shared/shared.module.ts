@@ -7,10 +7,12 @@ import { ModalAnswerQuestionComponent } from './modals/modal-answer-question/mod
 import { ScoreService } from './sevices/score.service';
 import { ModalDetailsComponent } from './modals/modal-details/modal-details.component';
 import { ModalGameOverComponent } from './modals/modal-game-over/modal-game-over.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     HttpClientModule
   ],
   exports: [

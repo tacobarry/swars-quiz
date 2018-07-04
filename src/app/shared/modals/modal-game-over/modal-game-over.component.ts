@@ -11,7 +11,7 @@ export class ModalGameOverComponent implements OnInit {
 
   title: string;
   closeBtnName: string;
-  player = {
+  player: any = {
     name: '',
     email: '',
     points: 0
@@ -20,14 +20,20 @@ export class ModalGameOverComponent implements OnInit {
   constructor(
     public bsModalRef: BsModalRef,
     private scoreService: ScoreService
-  ) {}
+  ) {
+    this.player = {
+      name: '',
+      email: '',
+      points: 0
+    };
+  }
 
   ngOnInit() {
     this.player.points = ScoreService.amountPoints;
   }
 
   onSave() {
-    
+    window.localStorage.setItem('scores', this.player);
   }
 
 }

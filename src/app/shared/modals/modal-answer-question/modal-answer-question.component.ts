@@ -22,7 +22,6 @@ export class ModalAnswerQuestionComponent implements OnInit, OnDestroy {
   ) {}
  
   ngOnInit() {
-    console.log('Amount', ScoreService.amountPoints);
   }
 
   answareQuestion(event, name) {
