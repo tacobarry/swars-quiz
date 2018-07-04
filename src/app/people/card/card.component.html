@@ -6,12 +6,16 @@
   </div>
   <div class="row">
     <div class="col-md-6 right">
-      <button alt="responder" (click)="answerQuestion(id)">
+      <button alt="responder"
+        type="button" class="btn btn-primary" 
+        (click)="answerQuestion()">
         ?
       </button>
     </div>
     <div class="col-md-6">
-      <button alt="dica" (click)="showDetailModal(person)">
+      <button alt="dica" 
+        type="button" class="btn btn-primary"
+        (click)="showDetailModal()">
         ...
       </button>
     </div>

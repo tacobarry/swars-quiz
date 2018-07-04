@@ -1,7 +1,8 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
-import { EventEmitter } from 'protractor';
-import { Person } from '../../shared/models/person';
+import { Component, OnInit, Input } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { ImageService } from '../image.service';
+import { ModalAnswerQuestionComponent } from '../../shared/modals/modal-answer-question/modal-answer-question.component';
 
 @Component({
   selector: 'app-card',
@@ -15,7 +16,9 @@ export class CardComponent implements OnInit {
 
   private picture: string;
 
-  constructor() { }
+  bsModalRef: BsModalRef;
+
+  constructor(private modalService: BsModalService) {}
 
   ngOnInit() {
     this.picture = `/assets/images/people/${
@@ -24,11 +27,22 @@ export class CardComponent implements OnInit {
   }
 
   answerQuestion() {
-    
+    const initialState = {
+      list: [
+        'Open a modal with component',
+        'Pass your data',
+        'Do something else',
+        '...'
+      ],
+      title: 'Modal with component',
+      person: this.person
+    };
+    this.bsModalRef = this.modalService.show(ModalAnswerQuestionComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
   }
 
-  showDetailModal(person) {
-
+  showDetailModal() {
+    //console.log(person)
   }
 
 }
