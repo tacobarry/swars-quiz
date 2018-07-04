@@ -4,6 +4,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { ImageService } from '../image.service';
 import { ModalAnswerQuestionComponent } from '../../shared/modals/modal-answer-question/modal-answer-question.component';
 import { Person } from '../../shared/models/person';
+import { ModalDetailsComponent } from '../../shared/modals/modal-details/modal-details.component';
 
 @Component({
   selector: 'app-card',
@@ -43,11 +44,14 @@ export class CardComponent implements OnInit {
 
   showDetailModal() {
     this.person.seeDetails = true;
-    let settings = {
+    const initialState = {
+      title: 'Detalhes',
+      picture: this.picture,
       person: this.person
     };
-    // this.bsModalRef = this.modalService.show(, settings)
-    // this.bsModalRef.content.closeBtnName = 'Close';
+
+    this.bsModalRef = this.modalService.show(ModalDetailsComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
     //console.log(person)
   }
 

@@ -9,6 +9,12 @@ export class ScoreService {
   static amountPoints: number;
   private accountedPeople: Array<Person>;
 
+  static player = {
+    name: '',
+    email: '',
+    points: 0
+  }
+
   constructor() {
     ScoreService.amountPoints = 0;
     this.accountedPeople = [];

@@ -5,6 +5,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { TimerComponent } from './timer/timer.component';
 import { ModalAnswerQuestionComponent } from './modals/modal-answer-question/modal-answer-question.component';
 import { ScoreService } from './sevices/score.service';
+import { ModalDetailsComponent } from './modals/modal-details/modal-details.component';
 
 @NgModule({
   imports: [
@@ -16,15 +17,18 @@ import { ScoreService } from './sevices/score.service';
     HttpClientModule,
     PaginationComponent,
     TimerComponent,
-    ModalAnswerQuestionComponent
+    ModalAnswerQuestionComponent,
+    ModalDetailsComponent
   ],
   declarations: [
     PaginationComponent,
     TimerComponent,
-    ModalAnswerQuestionComponent
+    ModalAnswerQuestionComponent,
+    ModalDetailsComponent
   ],
   entryComponents: [
-    ModalAnswerQuestionComponent
+    ModalAnswerQuestionComponent,
+    ModalDetailsComponent
   ],
   providers: [
     ScoreService
