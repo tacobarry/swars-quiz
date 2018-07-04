@@ -28,17 +28,16 @@ export class CardComponent implements OnInit {
 
   answerQuestion() {
     const initialState = {
-      list: [
-        'Open a modal with component',
-        'Pass your data',
-        'Do something else',
-        '...'
-      ],
-      title: 'Modal with component',
+      title: 'Qual o nome do Personagem?',
+      picture: this.picture,
       person: this.person
     };
     this.bsModalRef = this.modalService.show(ModalAnswerQuestionComponent, {initialState});
     this.bsModalRef.content.closeBtnName = 'Close';
+  }
+
+  onAnswared(name) {
+    console.log('NAME:::', name);
   }
 
   showDetailModal() {

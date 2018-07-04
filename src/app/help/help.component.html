@@ -1,6 +1,6 @@
-<div class="container" style="text-align:center">
-  <div class="row">
-    <div class="col-md-12">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
       <p>Em uma galáxia, muito, muito distante...</p>
       <p>
         ...aconte um Quiz, que consiste num jogo de perguntas e respostas, 
@@ -9,7 +9,7 @@
       </p>
       <p>
         O cronômetro irá disparar a partir do momento que clicar no botão de
-        <button>Iniciar</button>
+        <button class="btn btn-dark btn-lg" (click)="false">Iniciar</button>
         no fim dessa página.
       </p>
       <p>
@@ -17,12 +17,27 @@
         sem consultar os detalhes do personagem esse ganha 10 pontos.
       </p>
       <p>Agora para cada personagem que for consultado os detalhes 
-        o jogador poderá ganhar apenas 5 pontos.</p>
+        o jogador poderá ganhar apenas 5 pontos.
+      </p>
+
+      <p>Botões:</p>
+      <ul>
+        <li>
+          <button class="btn btn-dark btn-lg">&nbsp;?</button>
+            = 
+          Responder o nome do personagem.
+        </li>
+        <li>
+          <button class="btn btn-dark btn-lg">...</button>
+            = 
+          Para visualizar os detalhes do personagem. 
+        </li>
+      </ul>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-5">
-      <button routerLink="/people">Iniciar</button>
+  <div class="row justify-content-center row--btn-start">
+    <div class="col-md-12">
+      <button routerLink="/game" class="btn btn-dark btn-lg start-btn">Iniciar</button>
     </div>
   </div>
 </div>

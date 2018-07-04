@@ -8,11 +8,12 @@ import { PeopleResponse } from '../shared/models/people-response'
 })
 export class PeopleService {
 
+  private fistEndPoint = 'https://swapi.co/api/people/'
+
   constructor( private http:HttpClient ) { }
 
-  getPeople(): Promise<PeopleResponse> {
-    return this.http.get<PeopleResponse>('https://swapi.co/api/people/')
-      .toPromise();
+  getPeopleFirstTime(): Promise<PeopleResponse> {
+    return this.getPeoplePaginated(this.fistEndPoint);
   }
 
   getPeoplePaginated(url): Promise<PeopleResponse> {

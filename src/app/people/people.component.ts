@@ -17,40 +17,26 @@ export class PeopleComponent implements OnInit {
   private paginationSize: 10;
 
   private peopleResponse: PeopleResponse;
+  private result: Promise<PeopleResponse>;
 
   constructor(
     private peopleService: PeopleService
   ) { }
 
   ngOnInit() {
-    this.people1 = [];
-    this.people2 = [];
-    this.peopleService.getPeople()
-      .then((res) => {
-        this.people = res['results'];
-
-        for (let i=0; i < this.people.length; i++) {
-          if (i < 5) {
-            this.people1.push(this.people[i]);
-          } else {
-            this.people2.push(this.people[i]);
-          }
-        }
-        this.peopleResponse = res;
-
-      })
-      .catch((err) => {
-        console.log(err)
-        this.people = [];
-      });
+    this.changePage(true);
   }
 
   changePage(url) {
-    if (url !== null) {
+    if (!!url) {
       this.people1 = [];
       this.people2 = [];
-      this.peopleService.getPeoplePaginated(url)
-        .then((res) => {
+      if (!this.peopleResponse) {
+        this.result = this.peopleService.getPeopleFirstTime()
+      } else {
+        this.result = this.peopleService.getPeoplePaginated(url)
+      }
+      this.result.then((res) => {
           this.people = res['results'];
   
           for (let i=0; i < this.people.length; i++) {

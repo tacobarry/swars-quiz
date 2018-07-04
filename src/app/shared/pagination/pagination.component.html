@@ -1,13 +1,13 @@
-<p>
-  pagination works!
-</p>
+<br><br>
 <footer>
-  <div class="row">
-    <div class="col-md-6">
-      <a class="btn btn-primary" (click)="onPrevious($event, peopleResponse.previous)"><< Página Anterior</a>
-    </div>
-    <div class="col-md-6">
-      <a class="btn btn-primary" (click)="onNext($event, peopleResponse.next)">Próxima Página >></a>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6" style="text-align: right">
+        <button class="btn btn-light btn-lg" (click)="onPrevious($event, peopleResponse.previous)"><< Página Anterior</button>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-light btn-lg" (click)="onNext($event, peopleResponse.next)">Próxima Página >></button>
+      </div>
     </div>
   </div>
 </footer>

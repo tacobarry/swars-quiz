@@ -1,19 +1,16 @@
-<p>
-  people works!
-</p>
-<app-timer></app-timer>
-
-<div class="row">
-  <div class="col-md-2" *ngFor="let item of people1" >
-    <app-card [person]="item"></app-card>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-2" *ngFor="let item of people1" >
+      <app-card [person]="item"></app-card>
+    </div>
+  </div>
+  <br/>
+  <div class="row justify-content-center">
+    <div class="col-md-2" *ngFor="let item of people2" >
+      <app-card [person]="item"></app-card>
+    </div>
   </div>
 </div>
-<br/>
-<div class="row">
-  <div class="col-md-2" *ngFor="let item of people2" >
-    <app-card [person]="item"></app-card>
-  </div>
-</div>
-
+  
 <app-pagination [peopleResponse]="peopleResponse" 
   (changePage)="changePage($event)"></app-pagination>
