@@ -14,5 +14,6 @@ export interface Person {
 	starships: Array<string>,
 	created: string,
 	edited: string,
-	url: string
+	url: string,
+	seeDetails: boolean
 }

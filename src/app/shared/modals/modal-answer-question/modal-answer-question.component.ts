@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/cor
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { Person } from '../../models/person';
 import { BsModalService } from 'ngx-bootstrap/modal';
+import { ScoreService } from '../../sevices/score.service';
 
 @Component({
   selector: 'app-modal-answer-question',
@@ -14,13 +15,18 @@ export class ModalAnswerQuestionComponent implements OnInit, OnDestroy {
   closeBtnName: string;
   answare: string = '';
   picture: string;
+  person: Person;
 
   @Output()
   onAnswared = new EventEmitter();
  
-  constructor(public bsModalRef: BsModalRef) {}
+  constructor(
+    public bsModalRef: BsModalRef,
+    private scoreService: ScoreService
+  ) {}
  
   ngOnInit() {
+    console.log('Amount', ScoreService.amountPoints);
     // console.log(this.person, 'PROFIT!!!')
     // this.list.push('PROFIT!!!');
   }
@@ -29,6 +35,7 @@ export class ModalAnswerQuestionComponent implements OnInit, OnDestroy {
     console.log('data', name);
     this.answare = name;
     this.onAnswared.emit( this.answare )
+    this.scoreService.answareQuestion(this.answare, this.person);
   }
 
   ngOnDestroy() {

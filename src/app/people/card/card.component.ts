@@ -3,6 +3,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { ImageService } from '../image.service';
 import { ModalAnswerQuestionComponent } from '../../shared/modals/modal-answer-question/modal-answer-question.component';
+import { Person } from '../../shared/models/person';
 
 @Component({
   selector: 'app-card',
@@ -12,7 +13,7 @@ import { ModalAnswerQuestionComponent } from '../../shared/modals/modal-answer-q
 export class CardComponent implements OnInit {
   
   @Input()
-  person: any;
+  person: Person;
 
   private picture: string;
 
@@ -41,6 +42,12 @@ export class CardComponent implements OnInit {
   }
 
   showDetailModal() {
+    this.person.seeDetails = true;
+    let settings = {
+      person: this.person
+    };
+    // this.bsModalRef = this.modalService.show(, settings)
+    // this.bsModalRef.content.closeBtnName = 'Close';
     //console.log(person)
   }
 
